@@ -6,12 +6,12 @@
 	// Data
 	// Example: http://anu.kom/stok_darah.php?gol_darah=O+Neg&kode_propinsi=51&page=1
 	$gol_darah = (!empty($_GET["gol_darah"]) ? $_GET["gol_darah"] : "0"); // golongan darah 0 == all
-	$propinsi = (!empty($_GET["kode_propinsi"]) ? $_GET["kode_propinsi"] : "0"); // kode propinsi 0 == all
+	$kode_propinsi = (!empty($_GET["kode_propinsi"]) ? $_GET["kode_propinsi"] : "0"); // kode propinsi 0 == all
 	$page = (!empty($_GET["page"]) ? $_GET["page"] : "1");
 	
 	// call function and return array print_r($data);
 	// Menampilkan data stok darah berdasarkan golongan darah atau kode propinsi */
-	$data = stok_darah($gol_darah, $propinsi, $page);
+	$data = stok_darah($gol_darah, $kode_propinsi, $page);
 	
 	// JSON
 	header('Content-Type: application/json');
